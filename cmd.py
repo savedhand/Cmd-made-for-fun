@@ -53,9 +53,10 @@ while True :
 		print("""version 1.1.1 - changed typo "shutdowm" to "shutdown", and changed every "if" to "elif" to make it multi-use
 version 1.2.1 - fixed "cd" command, it now simply tells you instead of crashing that the drive simply doesn't exist and imported os cuz that's the bigger fish to catch, made it so that read doesn't crash when the file doesn't exist 
 version 1.3.1 - fixed "mkdir" meaning in cmds and made mkdir stable with already existing folders
-version 1.5.1 - added handling if the stuff after echo or customization is none""")
+version 1.5.1 - added handling if the stuff after echo or customization is none
+version 1.6.1 - added cls to command cuz i forgot""")
 	elif command=="version":
-		print("idk's cmd 1.6.0")
+		print("idk's cmd 1.6.1")
 	elif command=="cmds":
 		print("""shutdown - exits the code, does NOT shut down your computer
 cat - overwrites, writes and creates files, type it raw and it'll work, else it won't work
@@ -69,6 +70,7 @@ pwd - show the current directory
 rename - renames a file or folder, type it raw and it'll work, else it won't work
 echo - just like the PowerShell "echo"
 customization - customization obviously
+cls - clear screen
 """)
 	elif command=="added":
 		print("""added stuff throughout the history :
