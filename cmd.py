@@ -55,7 +55,7 @@ version 1.2.1 - fixed "cd" command, it now simply tells you instead of crashing 
 version 1.3.1 - fixed "mkdir" meaning in cmds and made mkdir stable with already existing folders
 version 1.5.1 - added handling if the stuff after echo or customization is none""")
 	elif command=="version":
-		print("idk's cmd 1.5.1")
+		print("idk's cmd 1.6.0")
 	elif command=="cmds":
 		print("""shutdown - exits the code, does NOT shut down your computer
 cat - overwrites, writes and creates files, type it raw and it'll work, else it won't work
@@ -77,7 +77,8 @@ customization - customization obviously
 1.2.0 - added "type cmds for commands", this was added during the 1.1.1 thing and removed cuz i accidentally didn't save the file and i had to rewrite everything
 1.3.0 - mkdir, rename, pwd, and fixed mkdir
 1.4.0 - echo, more info about echo in cmds
-1.5.1 - customization command""")
+1.5.1 - customization command
+1.6.0 - cls, clear screen, works across macOS, windows and linux""")
 	elif command=="read":
 		readname=input("name of the file? (only reads 255 characters) : ")
 		try:
@@ -107,5 +108,7 @@ this is an thing created for fun""")
 		prompt=f"{st3}:>"#oh hi! welcome to see you looking in the codes
 	elif command=="customization":
 		print("please say something like \"customization Shell for idk\" so i can understand you")
+	elif command=="cls":
+		os.system("cls" if os.name=="nt" else "clear")
 	else:
 		print("404! that command doesn't exist")
