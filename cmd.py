@@ -56,7 +56,7 @@ version 1.3.1 - fixed "mkdir" meaning in cmds and made mkdir stable with already
 version 1.5.1 - added handling if the stuff after echo or customization is none
 version 1.6.1 - added cls to command cuz i forgot""")
 	elif command=="version":
-		print("idk's cmd 1.6.1")
+		print("idk's cmd 1.7.0")
 	elif command=="cmds":
 		print("""shutdown - exits the code, does NOT shut down your computer
 cat - overwrites, writes and creates files, type it raw and it'll work, else it won't work
@@ -68,9 +68,11 @@ cmds - the one you are viewing
 added - added stuff throughout the history
 pwd - show the current directory
 rename - renames a file or folder, type it raw and it'll work, else it won't work
-echo - just like the PowerShell "echo"
+echo - just like the PowerShell "echo", syntax: " echo dikdik example"
 customization - customization obviously
 cls - clear screen
+ls - lists folders and files in the current directory, unicode order
+del - deletes files, syntax : "del txt.txt"
 """)
 	elif command=="added":
 		print("""added stuff throughout the history :
@@ -80,7 +82,8 @@ cls - clear screen
 1.3.0 - mkdir, rename, pwd, and fixed mkdir
 1.4.0 - echo, more info about echo in cmds
 1.5.1 - customization command
-1.6.0 - cls, clear screen, works across macOS, windows and linux""")
+1.6.0 - cls, clear screen, works across macOS, windows and linux, after testing, it may take some time
+1.7.0 - ls, and del""")
 	elif command=="read":
 		readname=input("name of the file? (only reads 255 characters) : ")
 		try:
@@ -106,11 +109,19 @@ this is an thing created for fun""")
 	elif command=="echo":
 		print("type something to repeat back.")
 	elif command.startswith("customization "):
-		st3=command[14:]
+		st1=command[14:]
 		prompt=f"{st3}:>"#oh hi! welcome to see you looking in the codes
 	elif command=="customization":
 		print("please say something like \"customization Shell for idk\" so i can understand you")
 	elif command=="cls":
 		os.system("cls" if os.name=="nt" else "clear")
+	elif command.startswith("del "):
+		st2=command[4:]
+		try:
+			os.remove(st2)
+		except FileNotFoundError:
+			print(f"that file doesn't exist in the current directory! try changing the directory, current directory : {os.getcwd()}")
+	elif command=="ls":
+		print(sorted(os.listdir()))
 	else:
 		print("404! that command doesn't exist")
