@@ -54,9 +54,10 @@ while True :
 version 1.2.1 - fixed "cd" command, it now simply tells you instead of crashing that the drive simply doesn't exist and imported os cuz that's the bigger fish to catch, made it so that read doesn't crash when the file doesn't exist 
 version 1.3.1 - fixed "mkdir" meaning in cmds and made mkdir stable with already existing folders
 version 1.5.1 - added handling if the stuff after echo or customization is none
-version 1.6.1 - added cls to command cuz i forgot""")
+version 1.6.1 - added cls to command cuz i forgot
+version 1.7.1 - fixed customization""")
 	elif command=="version":
-		print("idk's cmd 1.7.0")
+		print("idk's cmd 1.7.1")
 	elif command=="cmds":
 		print("""shutdown - exits the code, does NOT shut down your computer
 cat - overwrites, writes and creates files, type it raw and it'll work, else it won't work
@@ -110,7 +111,7 @@ this is an thing created for fun""")
 		print("type something to repeat back.")
 	elif command.startswith("customization "):
 		st1=command[14:]
-		prompt=f"{st3}:>"#oh hi! welcome to see you looking in the codes
+		prompt=f"{st1}:>"#oh hi! welcome to see you looking in the codes
 	elif command=="customization":
 		print("please say something like \"customization Shell for idk\" so i can understand you")
 	elif command=="cls":
